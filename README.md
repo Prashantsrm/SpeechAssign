@@ -16,7 +16,7 @@ This repository contains the implementation of a hand‑crafted MFCC extraction 
    source speech_env/bin/activate
 
 
-2. Install dependencies
+**2. Install dependencies**
 
 bash
 pip install -r requirements.txt
@@ -30,28 +30,28 @@ python -c "import numpy as np, soundfile as sf; fs=16000; t=np.linspace(0,1,fs);
 Running the Code
 All scripts accept the path to an audio file as a command‑line argument.
 
-1. Manual MFCC Extraction
+**1. Manual MFCC Extraction**
 bash
 python mfcc_manual.py <audio_file>
 Output:
 
 mfcc.png – a heatmap of the MFCC coefficients.
 
-2. Spectral Leakage & SNR Analysis
+**2. Spectral Leakage & SNR Analysis**
 bash
 python leakage_snr.py <audio_file>
 Output:
 
 leakage_comparison.png – FFT magnitude plots for rectangular, Hamming, and Hann windows.
 
-3. Voiced/Unvoiced Segmentation
+**3. Voiced/Unvoiced Segmentation**
 bash
 python voiced_unvoiced.py <audio_file>
 Output:
 
 voiced_unvoiced.png – waveform with voiced regions highlighted in green.
 
-4. Phonetic Mapping & RMSE Calculation
+**4. Phonetic Mapping & RMSE Calculation**
 bash
 python phonetic_mapping.py <audio_file>
 Output:
@@ -59,7 +59,7 @@ Output:
 rmse_table.txt – a table containing the RMSE between the manually detected boundaries and the Wav2Vec2 forced alignment boundaries.
 The first run will download the Wav2Vec2 model (approx. 1 GB).
 
-Example (using a FLAC file from LibriSpeech)
+**Example (using a FLAC file from LibriSpeech)**
 bash
 python mfcc_manual.py data/LibriSpeech/test-clean/1089/134686/1089-134686-0000.flac
 python leakage_snr.py data/LibriSpeech/test-clean/1089/134686/1089-134686-0000.flac
