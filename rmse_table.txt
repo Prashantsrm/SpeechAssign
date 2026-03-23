@@ -1,0 +1,4 @@
+Audio file: LibriSpeech/test-clean/1089/134686/1089-134686-0000.flac
+Number of our boundaries: 0
+Number of model boundaries: 263
+RMSE (seconds): inf
