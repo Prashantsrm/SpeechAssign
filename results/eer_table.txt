@@ -1,0 +1,2 @@
+Baseline EER: 0.0433
+Proposed EER: 0.1342
