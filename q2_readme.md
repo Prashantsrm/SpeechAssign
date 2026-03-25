@@ -1,8 +1,6 @@
 # Q2: Disentangled Representation Learning for Environment-agnostic Speaker Recognition
 
-This repository contains a reproduction of the method from the paper  
-*Disentangled Representation Learning for Environment-agnostic Speaker Recognition* (https://arxiv.org/abs/2406.14559).  
-We implement a reduced version of the proposed disentanglement model and compare it against a baseline speaker embedding system.
+I implement a reduced version of the proposed disentanglement model and compare it against a baseline speaker embedding system.
 
 ## Requirements
 
@@ -10,14 +8,14 @@ We implement a reduced version of the proposed disentanglement model and compare
 - Python 3.8+
 - Virtual environment (recommended)
 
-Install the required packages:
+**Install the required packages:**
 
 ```bash
 pip install torch==2.2.0 torchaudio==2.2.0 numpy scipy matplotlib pandas scikit-learn tqdm
 Setup
 Clone the repository (or place the code in a folder, e.g., ~/ques2).
 
-Prepare the data
+**Prepared the data**
 Download the LibriSpeech train-clean-5 subset from OpenSLR and extract it.
 Optionally, download MUSAN noise (http://www.openslr.org/resources/17/musan.tar.gz) for realistic additive noise.
 Update the paths in configs/config.py to point to your data directories.
@@ -48,7 +46,7 @@ Save the checkpoints as results/baseline.pth and results/proposed.pth
 
 Training logs show the loss per epoch for each model.
 
-Evaluation
+**Evaluation**
 After training, evaluate the models using:
 
 bash
@@ -65,7 +63,7 @@ Calculates the Equal Error Rate (EER) for speaker verification
 
 The results are printed to the console and saved in results/eer_table.txt.
 
-Results
+**Results**
 Below are the obtained EER values from our experiments:
 
 Model	EER
@@ -79,8 +77,8 @@ Our proposed model is a reduced reproduction that may require more tuning (e.g.,
 The dataset (LibriSpeech train‑clean‑5) is small, and the disentanglement task (separating speaker and environment) may be too complex given the limited data.
 
 Nevertheless, the proposed method successfully trains a model that can reconstruct mel‑spectrograms and disentangle environment features, as evidenced by the adversarial loss decreasing during training.
-
-Folder Structure
+****
+Folder Structure****
 text
 q2/
 ├── configs/
@@ -102,7 +100,7 @@ Run python train.py – wait for training to finish (approx. 20–30 minutes on 
 
 Run python eval.py – observe the printed EER values.
 
-Notes
+**Notes**
 The dataset uses fixed‑length mel‑spectrograms (200 frames, ≈2 seconds) to allow batching.
 
 The baseline model is a simple LSTM; you may replace it with a more powerful model (e.g., ECAPA‑TDNN) if desired.
